@@ -1,4 +1,4 @@
 deployment:
-tasks:
-- export DEPLOYPATH=/home/u6036799/public_html/repositories/calculate-chess
-- /bin/cp -r * $DEPLOYPATH
+  tasks:
+    - export DEPLOYPATH=/home/u6036799/public_html/repositories/calculate-chess
+    - /bin/cp -r * $DEPLOYPATH
