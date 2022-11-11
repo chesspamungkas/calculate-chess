@@ -45,3 +45,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         server-dir: ${{ secrets.SERVERDIR }}
+        script: |
+          git pull origin master
+          npm install
