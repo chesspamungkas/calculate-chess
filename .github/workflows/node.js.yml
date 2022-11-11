@@ -48,3 +48,4 @@ jobs:
         script: |
           git pull origin master
           npm install
+          npm start
