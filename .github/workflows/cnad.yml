@@ -53,6 +53,4 @@ jobs:
                 exclude: |
                     **/.github/**
                     **/.git/**
-                    README.md
                     .gitignore
-                    .eslintrc.json
