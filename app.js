@@ -3,11 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cnad = require("@bitc/cnad");
 
 var indexRouter = require('./routes/index');
 var calculateRouter = require('./routes/calculate');
 
 var app = express();
+
+cnad.config("/home/u6036799/nodevenv/public_html/repositories/calculate-chess/16");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,5 +40,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+cnad.start();
 
 module.exports = app;
