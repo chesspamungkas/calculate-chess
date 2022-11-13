@@ -24,15 +24,6 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Generate build
-              run: npm run build
-
-            - name: Upload .next folder
-              uses: actions/upload-artifact@v3
-              with:
-                name: dot_next_folder
-                path: .next/
-
     web-deploy:
         name: 🎉 Deploy
         runs-on: ubuntu-latest
@@ -46,12 +37,6 @@ jobs:
               run: |
                 mkdir tmp && touch tmp/restart.txt 
                 echo $RANDOM > tmp/restart.txt
-
-            - name: download .next folder
-              uses: actions/download-artifact@v3
-              with:
-                name: dot_next_folder
-                path: .next
 
             - name: 📂 Sync files
               uses: SamKirkland/FTP-Deploy-Action@4.3.2
