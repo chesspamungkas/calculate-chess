@@ -24,8 +24,11 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Generate start
-              run: npm start
+            - name: Run build if present
+              run: npm run build --if-present
+
+            - name: Run npm test
+              run: npm test
 
     web-deploy:
         name: 🎉 Deploy
